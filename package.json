@@ -1,5 +1,5 @@
 {
-  "name": "recharts",
+  "name": "@silte/recharts",
   "version": "2.0.0-beta.6",
   "description": "React charts",
   "main": "lib/index",
@@ -45,13 +45,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/recharts/recharts.git"
+    "url": "https://github.com/silte/recharts.git"
   },
-  "author": "recharts group",
-  "bugs": {
-    "url": "https://github.com/recharts/recharts/issues"
-  },
-  "homepage": "https://github.com/recharts/recharts",
+  "author": "silte",
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
