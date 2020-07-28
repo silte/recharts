@@ -156,6 +156,7 @@ export interface CategoricalChartProps {
   onMouseUp?: any;
   reverseStackOrder?: boolean;
   id?: string;
+  maxDataPointsToRender?: number;
 
   startAngle?: number;
   endAngle?: number;
@@ -252,7 +253,17 @@ const generateCategoricalChart = ({
       const { data } = props;
 
       if (data && data.length && isNumber(dataStartIndex) && isNumber(dataEndIndex)) {
-        return data.slice(dataStartIndex, dataEndIndex + 1);
+        const targetDataPoints = data.slice(dataStartIndex, dataEndIndex + 1);
+        const { maxDataPointsToRender } = props;
+        if (!isNumber(maxDataPointsToRender) || maxDataPointsToRender > targetDataPoints.length) {
+          return targetDataPoints;
+        }
+
+        const everyNth = (arr: any[], nth: number) => arr.filter((e, i) => i % nth === nth - 1);
+
+        const dataPointCountDivider = Math.floor(targetDataPoints.length / maxDataPointsToRender);
+
+        return everyNth(targetDataPoints, dataPointCountDivider);
       }
 
       return [];
