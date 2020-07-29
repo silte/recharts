@@ -1,3 +1,9 @@
+# Fork from [Recharts](https://github.com/recharts/recharts)
+
+## Changes in this fork:
+
+- added `maxDataPointsToRender` property to allow limit datapoint count which will be rendered to chart
+
 # Recharts
 
 [![Sponsors on Open Collective](https://opencollective.com/recharts/sponsors/badge.svg)](https://opencollective.com/recharts#sponsors)
@@ -22,12 +28,7 @@ The main purpose of this library is to help you to write charts in React applica
 ## Examples
 
 ```jsx
-<LineChart
-  width={400}
-  height={400}
-  data={data}
-  margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
->
+<LineChart width={400} height={400} data={data} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
   <XAxis dataKey="name" />
   <Tooltip />
   <CartesianGrid stroke="#f5f5f5" />
@@ -44,7 +45,6 @@ All the components of Recharts are clearly separated. The lineChart is composed 
 
 NPM is the easiest and fastest way to get started using Recharts. It is also the recommended installation method when building single-page applications (SPAs). It pairs nicely with a CommonJS module bundler such as Webpack.
 
-
 ```sh
 # latest stable
 $ npm install recharts
@@ -55,9 +55,9 @@ $ npm install recharts
 The UMD build is also available on unpkg.com:
 
 ```html
- <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
- <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
- <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
 ```
 
 Then you can find the library on `window.Recharts`.
@@ -89,9 +89,10 @@ and then browse to http://localhost:3000.
 
 We'd love :heart: to hear what you think we should build. Please create an issue to write your usage or ideas.
 
-We are looking for like-minded people who share the same idea about Recharts. The goal of this project is create a more flexible charting library for the  React community.
+We are looking for like-minded people who share the same idea about Recharts. The goal of this project is create a more flexible charting library for the React community.
 
 ## Backers
+
 [Become a backer](https://opencollective.com/recharts#backer) and get your image on our README on Github with a link to your site.
 
 <a href="https://opencollective.com/recharts/backer/0/website?requireActive=false" target="_blank"><img src="https://opencollective.com/recharts/backer/0/avatar.svg?requireActive=false"></a>
